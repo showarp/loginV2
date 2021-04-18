@@ -10,7 +10,7 @@ tray = null
 app.setAppUserModelId('LogIn!🐴')
 app.on('ready',()=>{
     mainWindow = new BrowserWindow({
-        width:395,
+        width:400,
         height:300,
         webPreferences:{
             nodeIntegration:true,
@@ -27,6 +27,12 @@ app.on('ready',()=>{
     mainWindow.setMenu(null);
     tray = new Tray(path.join(__dirname,'/icon.png'));
     const contextMenu = new Menu.buildFromTemplate([{
+        label:'切换用户',
+        click:function(){
+            mainWindow.show();
+            mainWindow.setSkipTaskbar(false);        
+        }
+    },{
         label: '退出',
             click: function () {
                 mainWindow.close();
@@ -34,11 +40,6 @@ app.on('ready',()=>{
     }])
     tray.setContextMenu(contextMenu)
     tray.setToolTip('💩💩💩')
-    tray.on('click', () => {
-        mainWindow.show();
-    mainWindow.setSkipTaskbar(false);
-
-    });
     ipcMain.on('close',()=>{
         mainWindow.hide();
     mainWindow.setSkipTaskbar(true);
@@ -83,6 +84,7 @@ app.on('ready',()=>{
             }
             if (obj.msg == 'logon success') {
                 mainWindow.webContents.send('successful')
+                tray.setToolTip(`当前用户:${data[0]}😍`)
                 setInterval(() => {
                     axios.get('https://www.baidu.com/').then(function (response) {
                         if (response.status != 200) {
@@ -90,6 +92,7 @@ app.on('ready',()=>{
                         } else {
                             if(tf ==false){
                                 mainWindow.webContents.send('connection')
+                                tray.setToolTip(`当前用户:${data[0]}😍`)
                                 tf = true
                             }
                         }
@@ -97,6 +100,7 @@ app.on('ready',()=>{
                         if (err) {
                             if(tf == true){
                                 mainWindow.webContents.send('reconnection')
+                                tray.setToolTip(`无连接🙄`)
                                 tf = false
                             }
                             axios(config).then(function (response) {}).catch(function (err) {})

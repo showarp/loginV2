@@ -1,5 +1,5 @@
 {
-  "name": "login-v2.0",
+  "name": "login-v2.4",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -25,7 +25,6 @@
     },
     "win": {
       "target": [
-        "nsis",
         "zip"
       ]
     }

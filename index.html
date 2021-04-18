@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login V2.0</title>
+    <title>Login V2.4</title>
 </head>
 <style>
     *{
@@ -116,17 +116,26 @@
     }
     #tt{
         position: absolute;
-        left: 50%;
-        top: 50%;
+        left: 0%;
+        top:  0%;
         width: 100%;
-        transform: translate(-50%,-50%);
+        height:100%;
+        background: url(./bg1.png);
+        background-position:100% 100%;
+        background-size: 5%;
         opacity:0.4;
+        animation: tt 15s linear infinite alternate;
+    }
+    @keyframes tt{
+        100%{
+            background-position:0% 0%;
+        }
     }
 </style>
 <body>
-    <div id="tt">😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅😅</div>
+    <div id="tt"></div>
     <div id="linebar">
-        Login V2.0
+        Login V2.4
     </div>
     <div id="topTools">
         <div id="logo">💩</div>
@@ -134,7 +143,7 @@
     </div>
     <div id="drag"></div>
     <div id="fm">
-        <input type="text" placeholder="username" id="username">
+        <input type="text" placeholder="username" id="username" spellcheck ='false'>
         <input type="password" placeholder="password" id="password">
     </div>
     <button id="btn">
